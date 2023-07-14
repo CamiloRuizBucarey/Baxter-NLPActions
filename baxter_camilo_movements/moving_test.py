@@ -38,8 +38,6 @@ test_right = {'right_s0': -0.5, 'right_s1': 0.00, 'right_w0': -0.67, 'right_w1':
 
 
 
-
-
 comando = {'left_e0': -3.00}
 com = {'left_e1': 1.00}
 #left.move_to_joint_positions(comando)

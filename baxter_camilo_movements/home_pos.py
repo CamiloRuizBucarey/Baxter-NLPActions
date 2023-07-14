@@ -4,7 +4,7 @@ import rospy
 import baxter_interface
 
 # Inicializa el "nodo" ROS y lo registra "with the Master"
-rospy.init_node('Home_Pos')
+#rospy.init_node('Home_Pos')
 
 # Crear instancias de la clase Limb(miembro/extremidad) de baxter_interface
 #right = baxter_interface.Limb('right')
@@ -20,4 +20,4 @@ left.move_to_joint_positions(home_left)
 
 
 
-quit()
+#quit()
