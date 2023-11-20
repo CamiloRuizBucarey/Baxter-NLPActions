@@ -11,7 +11,7 @@ def obtener_respuesta(mensaje):
     ]
     contexto.append({"role": "user", "content": mensaje})
 
-    api_key = "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"
+    api_key = "chat-gpt-private-key"	#Considerar el uso de una clave de chat gpt para la consulta
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
