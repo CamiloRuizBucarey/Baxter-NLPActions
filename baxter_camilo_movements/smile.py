@@ -12,7 +12,6 @@ from sensor_msgs.msg import (
 )
 
 path = "src/baxter_camilo_movements/images/Happy_Face.png"
-
 # Image formats are those supported by OpenCv - LoadImage()
 if not os.access(path, os.R_OK):
     print("No se pudo abrir la imagen 1")
