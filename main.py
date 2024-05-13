@@ -71,11 +71,15 @@ actions = {
 	("terminar",): ("", "", ""),
 	("conversar",): ("", "", ""),
 	("levanta", "brazo", "izquierdo"): ("simple", "./src/baxter_camilo_movements/raise_elbow_left.py"),
+	("sube", "brazo", "izquierdo"): ("simple", "./src/baxter_camilo_movements/raise_elbow_left.py"),
 	("levanta", "brazo", "derecho"): ("simple", "./src/baxter_camilo_movements/raise_elbow_right.py"),
+	("sube", "brazo", "derecho"): ("simple", "./src/baxter_camilo_movements/raise_elbow_right.py"),
 	("estira", "brazo", "izquierdo"): ("simple", "./src/baxter_camilo_movements/open_left.py"),
 	("estira", "brazo", "derecho"): ("simple", "./src/baxter_camilo_movements/open_right.py"),
 	("levanta", "mano", "izquierda"): ("simple", "./src/baxter_camilo_movements/raise_hand_left.py"),
+	("sube", "mano", "izquierda"): ("simple", "./src/baxter_camilo_movements/raise_hand_left.py"),
 	("levanta", "mano", "derecha"): ("simple", "./src/baxter_camilo_movements/raise_hand_right.py"),
+	("sube", "mano", "derecha"): ("simple", "./src/baxter_camilo_movements/raise_hand_right.py"),
 	("sacude", "mano", "izquierda"): ("simple", "./src/baxter_camilo_movements/shake_hand_left.py"),
 	("sacude", "mano", "derecha"): ("simple", "./src/baxter_camilo_movements/shake_hand_right.py"),
 	("endereza", "codo", "izquierdo"): ("simple", "./src/baxter_camilo_movements/elbow_straight_left.py"),
@@ -92,13 +96,17 @@ actions = {
 	########## ACCIONES PARALELAS ###########
 	("preparate",): ("paralela", "./src/baxter_camilo_movements/home_pos.py", "./src/baxter_camilo_movements/home_right.py"),
 	("abre", "brazos"): ("paralela", "./src/baxter_camilo_movements/open_right.py", "./src/baxter_camilo_movements/open_left.py"),
+	("estira", "brazos"): ("paralela", "./src/baxter_camilo_movements/open_right.py", "./src/baxter_camilo_movements/open_left.py"),
 	("levanta", "brazos"): ("paralela", "./src/baxter_camilo_movements/raise_elbow_left.py", "./src/baxter_camilo_movements/raise_elbow_right.py"),
+	("sube", "brazos"): ("paralela", "./src/baxter_camilo_movements/raise_elbow_left.py", "./src/baxter_camilo_movements/raise_elbow_right.py"),
 	("sacude", "manos"): ("paralela", "./src/baxter_camilo_movements/shake_hand_left.py", "./src/baxter_camilo_movements/shake_hand_right.py"),
 	("adelanta", "hombros"): ("paralela", "./src/baxter_camilo_movements/forward_elbow_left.py", "./src/baxter_camilo_movements/forward_elbow_right.py"),
 	("quiebra", "muñecas"): ("paralela", "./src/baxter_camilo_movements/break_wrist_left.py", "./src/baxter_camilo_movements/break_wrist_right.py"),
 	########## ACCIONES COMPUESTAS ##########
 	("decir", "si"): ("compuesta", "./src/baxter_camilo_movements/smile.py", "./src/baxter_camilo_movements/answer_yes.py", "./src/baxter_camilo_movements/std_face.py"),
+	("asentir",): ("compuesta", "./src/baxter_camilo_movements/smile.py", "./src/baxter_camilo_movements/answer_yes.py", "./src/baxter_camilo_movements/std_face.py"),
 	("decir", "no"): ("compuesta", "./src/baxter_camilo_movements/angry.py", "./src/baxter_camilo_movements/answer_no.py", "./src/baxter_camilo_movements/std_face.py"),
+	("negar",): ("compuesta", "./src/baxter_camilo_movements/angry.py", "./src/baxter_camilo_movements/answer_no.py", "./src/baxter_camilo_movements/std_face.py"),
 	("saludar", "derecho"): ("compuesta", "./src/baxter_camilo_movements/raise_elbow_right.py", "./src/baxter_camilo_movements/raise_hand_right.py", "./src/baxter_camilo_movements/shake_hand_right.py"),
 	("saludar", "izquierdo"): ("compuesta", "./src/baxter_camilo_movements/raise_elbow_left.py", "./src/baxter_camilo_movements/raise_hand_left.py", "./src/baxter_camilo_movements/shake_hand_left.py"),
 	("celebrar", "izquierdo"): ("compuesta", "./src/baxter_camilo_movements/raise_elbow_left.py", "./src/baxter_camilo_movements/elbow_straight_left.py", "./src/baxter_camilo_movements/raise_hand_left.py", "./src/baxter_camilo_movements/celebration_left.py"),
@@ -108,8 +116,12 @@ actions = {
 	########## ACCIONES COMPLEJAS ###########
 	("saluda", "manos"): ("compleja", "paralela", ("instruccion", "instruccion"), ("saludar", "derecho"), ("saludar", "izquierdo")),
 	("abrazo",): ("compleja", "secuencial", ("instruccion", "instruccion", "instruccion", "instruccion"), ("levanta", "brazos"), ("adelanta", "hombros"), ("adelanta", "hombros"), ("quiebra", "muñecas")),
+	("abrazala",): ("compleja", "secuencial", ("instruccion", "instruccion", "instruccion", "instruccion"), ("levanta", "brazos"), ("adelanta", "hombros"), ("adelanta", "hombros"), ("quiebra", "muñecas")),
+	("abrazalo",): ("compleja", "secuencial", ("instruccion", "instruccion", "instruccion", "instruccion"), ("levanta", "brazos"), ("adelanta", "hombros"), ("adelanta", "hombros"), ("quiebra", "muñecas")),
+	("abrazame",): ("compleja", "secuencial", ("instruccion", "instruccion", "instruccion", "instruccion"), ("levanta", "brazos"), ("adelanta", "hombros"), ("adelanta", "hombros"), ("quiebra", "muñecas")),
+	("celebrar",): ("compleja", "paralela", ("instruccion", "instruccion"), ("celebrar", "izquierdo"), ("celebrar", "derecho")),
 	("celebrar", "ambos"): ("compleja", "paralela", ("instruccion", "instruccion"), ("celebrar", "izquierdo"), ("celebrar", "derecho")),
-	("decir", "no", "saber"): ("compleja", "paralela", ("instruccion", "instruccion"), ("incognita", "izquierdo"), ("incognita", "derecho"))
+	("decir", "no", "saber"): ("compleja", "paralela", ("instruccion", "instruccion"), ("incognita", "izquierdo"), ("incognita", "derecho")),
 }
 
 def searching_actions(tup):
@@ -230,8 +242,12 @@ def main():
 				thread_function(path[1])
 			elif path[0] == "paralela":
 				# EJECUCION ACCION PARALELA
+				ll = []
 				for i in range(1, len(path)):
-					Thread(target = thread_function, args = (path[i],)).start()
+					ll.append(Thread(target = thread_function, args = (path[i],)))
+					ll[i-1].start()
+				for i in ll:
+					i.join()
 			elif path[0] == "compuesta":
 				#EJECUCCION ACCION COMPUESTA
 				for i in range(1, len(path)):
@@ -268,17 +284,21 @@ def main():
 								if path2[0] == "simple":
 									Thread(target = thread_function, args =(path2[1],)).start()
 								elif path2[0] == "paralela":
-									#ll = []
+									ll = []
 									for j in range(1, len(path2)):
-										Thread(target = thread_function, args = (path2[j],)).start()  # Posiblemente asi para paralela
-										#ll.append(Thread(target = thread_function, args = (path2[j],)))
-										#ll[j-1].start()
-									#for j in range(len(ll)):
-									#	ll[j].join()
+										##Thread(target = thread_function, args = (path2[j],)).start()  # Posiblemente asi para paralela
+										ll.append(Thread(target = thread_function, args = (path2[j],)))
+										ll[j-1].start()
+									for j in range(len(ll)):
+										ll[j].join()
 								elif path2[0] == "compuesta":
-									Thread(target = complex_function, args = (path2,)).start()
+									t1 = Thread(target = complex_function, args = (path2,))
+									t1.start()
+									t1.join()
 						elif i == "codigo":
-							Thread(target = thread_function, args = (path[aux],)).start()
+							t1 = Thread(target = thread_function, args = (path[aux],))
+							t1.start()
+							t1.join()
 		elif textInput == ("terminar",):
 			print("Finalizando programa...")
 		else:
@@ -294,6 +314,7 @@ def main():
 			###### COLOCAR IMAGEN EN PANTALLA ######
 
 			print("Reintente...")
+
 
 
 if __name__ == '__main__':
